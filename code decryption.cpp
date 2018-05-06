@@ -13,7 +13,7 @@ int main()
         }
     }
     
-    char number[amount], reverse[amount];
+    char number[amount] = {0}, reverse[amount] = {0};
     int decision = 0;
     while (decision == 0) {
         cout << "½Ğ¿é¤J¼Æ¦r(1~9): ";
@@ -53,19 +53,25 @@ int main()
         }
     }
     
-    int num;
-    char code[num];
+    int num = amount;
+    char code[num] = {0};
     int x = 0;
     for (int i = 0; i < amount; i++) {
         if ((number[i]-'0')%2 == 0) {
             code[i-x] = number[i];
         } else if ((number[i]-'0')%2 == 1) {
-            x++;
+        	x++;
         }
     }
-    num = amount-x;
-    code[num] = '\0';
     
+	num = amount-x;
+    if (num == 0) {
+        code[num] = '0';
+        code[num+1] = '\0';
+    } else {
+        code[num] = '\0';
+    }
+        
     if (trueOrFalse == 0) {
         cout << "INCORRECT";
     } else {
