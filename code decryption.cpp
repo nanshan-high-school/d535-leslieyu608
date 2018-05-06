@@ -15,17 +15,19 @@ int main()
     
     char number[amount], reverse[amount];
     int decision = 0;
-    while (decision = 0) {
+    while (decision == 0) {
         cout << "請輸入數字(1~9): ";
         cin >> number;
         for (int i = 0; i < amount; i++) {
             if (number[i]-'0' <= 0) {
+                decision = 0;
                 break;
             } else {
                 decision = 1;
             }
         }
-        if (decision = 0) {
+        
+        if (decision == 0) {
             cout << "請重新輸入!" << endl;
         } else {
             break;
