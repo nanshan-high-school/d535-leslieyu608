@@ -6,17 +6,17 @@ int main()
 {
     int amount = 0;
     while (amount < 10 || amount > 30) {
-        cout << "要輸入幾個數字(10~30個)? ";
+        cout << "How many numbers do you want to enter? (10~30) ";
         cin >> amount;
         if (amount < 10 || amount > 30) {
-            cout << "請重新輸入!" << endl;
+            cout << "Please enter it again!" << endl;
         }
     }
     
     char number[amount] = {0}, reverse[amount] = {0};
     int decision = 0;
     while (decision == 0) {
-        cout << "請輸入數字(1~9): ";
+        cout << "Please enter the numbers: (1~9) ";
         cin >> number;
         for (int i = 0; i < amount; i++) {
             if (number[i]-'0' <= 0) {
@@ -28,7 +28,7 @@ int main()
         }
         
         if (decision == 0) {
-            cout << "請重新輸入!" << endl;
+            cout << "Please enter it again!" << endl;
         } else {
             break;
         }
